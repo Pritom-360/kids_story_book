@@ -1,0 +1,29 @@
+{
+  "id": "the_brave_rabbit",
+  "title": "The Brave Rabbit",
+  "category": "Classic",
+  "thumbnail": "assets/images/brave_rabbit_thumb.png",
+  "pages": [
+    {
+      "type": "read",
+      "text": "Once upon a time, in a sun-dappled meadow, lived a little rabbit named Pip. Pip was smaller than all his siblings, but he had the biggest heart.",
+      "image": "assets/images/story1_page1.png",
+      "audio": "assets/audio/story1_page1.mp3"
+    },
+    {
+      "type": "game",
+      "gameType": "memory_game",
+      "gameScript": "js/games/memory_game.js",
+      "description": "Pip found a treasure chest! Match the pairs of magical items inside.",
+      "gameData": {
+        "items": ["gem", "key", "map", "coin", "ring", "wand"]
+      }
+    },
+    {
+      "type": "read",
+      "text": "After matching all the treasures, a magical map appeared! It showed the way to the Whispering Woods, a place no rabbit had dared to go before.",
+      "image": "assets/images/story1_page3.png",
+      "audio": "assets/audio/story1_page3.mp3"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "luna_the_light",
+  "title": "Luna, the Little Light",
+  "category": "Bedtime",
+  "thumbnail": "assets/images/luna_thumb.png",
+  "pages": [
+    {
+      "type": "read",
+      "text": "In a field of sleepy daisies, lived a little firefly named Luna. While other fireflies danced with bright, bold lights, Luna was afraid of the dark, so she kept her own light very, very small.",
+      "image": "assets/images/luna_page1.png",
+      "audio": "assets/audio/luna_page1.mp3"
+    },
+    {
+      "type": "read",
+      "text": "One night, a wise old owl with spectacles on his beak hooted gently. 'Little one,' he said, 'the night is not empty. It's a treasure map! Shine your light, and you will see the patterns.'",
+      "image": "assets/images/luna_page2.png",
+      "audio": "assets/audio/luna_page2.mp3"
+    },
+    {
+      "type": "game",
+      "gameType": "connect_the_dots_game",
+      "gameScript": "js/games/connect_the_dots_game.js",
+      "description": "Help Luna connect the stars to reveal the magical shapes in the sky!",
+      "gameData": {
+        "backgroundImage": "assets/images/games/constellation_bg.png",
+        "starPositions": [
+          {"x": 100, "y": 200}, {"x": 150, "y": 120}, {"x": 250, "y": 110},
+          {"x": 300, "y": 180}, {"x": 250, "y": 250}, {"x": 180, "y": 280}
+        ],
+        "finalImage": "assets/images/games/great_bear_final.png"
+      }
+    },
+    {
+      "type": "read",
+      "text": "As Luna connected the stars, a Great Bear appeared, twinkling back at her! The sky wasn't scary at all; it was full of friends. From that night on, Luna's light was the brightest in the whole field.",
+      "image": "assets/images/luna_page4.png",
+      "audio": "assets/audio/luna_page4.mp3"
+    }
+  ]
+}

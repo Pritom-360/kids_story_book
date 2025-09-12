@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="storybook">
+        <!-- Home button moved inside storybook for better positioning -->
+        <a href="index.html" class="home-button" aria-label="Go to Homepage">
+            <!-- SVG Icon for Home -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+        </a>
+
+        <!-- Read mode toggle is also positioned absolutely by CSS -->
+        <button id="read-mode-toggle">Read Myself</button>
+
+        <div id="page-container" class="page">
+            <div id="image-container"></div>
+            <div id="text-container"></div>
+            <div id="game-container"></div>
+        </div>
+
+        <div id="controls">
+            <button id="prev-page" class="control-button" aria-label="Previous Page"></button>
+            <span id="page-indicator"></span>
+            <!-- Play/Pause button for narration -->
+            <button id="play-pause-btn" class="control-button" aria-label="Play Narration"></button>
+            <button id="next-page" class="control-button" aria-label="Next Page"></button>
+        </div>
+    </div>
+
+    <audio id="narration-audio"></audio>
+    <!-- Use the same story.js, but it will populate the new buttons -->
+    <script src="js/story.js"></script>
+</body>
+</html>

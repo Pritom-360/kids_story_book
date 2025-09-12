@@ -1,0 +1,341 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #FFF8E7;
+    --primary-color: #58A4B0;
+    --accent-color: #FFD166;
+    --text-color: #4A4A4A;
+    --white: #FFFFFF;
+    --font-family: 'Nunito', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on mobile */
+}
+
+/* --- Homepage Styles --- */
+#homepage header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#homepage section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent-color);
+    text-align: left;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    gap: 1rem;
+}
+
+.story-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: var(--text-color);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.story-card .thumbnail-container {
+    position: relative;
+}
+
+.story-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.story-card.unread .new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.story-card h3 {
+    padding: 0.75rem;
+    margin: 0;
+    font-size: 1rem;
+    flex-grow: 1; /* Makes all cards equal height */
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #e0e0e0;
+    width: 100%;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%; /* Updated by JS */
+    background-color: var(--primary-color);
+    transition: width 0.5s ease;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .story-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* --- Story Page Styles --- */
+#storybook {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 2rem); /* Full viewport height minus padding */
+    max-width: 800px;
+    margin: auto;
+}
+
+#page-container {
+    flex-grow: 1;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Page Turn Animation */
+.page-turn-next { animation: turnNext 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; }
+.page-turn-prev { animation: turnPrev 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards; }
+@keyframes turnNext {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes turnPrev {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+#image-container img {
+    max-width: 100%;
+    max-height: 45vh;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+#text-container {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    max-height: 40vh;
+    overflow-y: auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#controls {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.control-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.control-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.control-button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.control-button svg {
+    width: 32px;
+    height: 32px;
+}
+
+#page-indicator {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* --- Find and REPLACE these existing rules in your CSS file --- */
+
+#read-mode-toggle {
+    position: absolute;
+    top: 20px; /* Increased from 1rem */
+    right: 20px; /* Increased from 1rem */
+    z-index: 10; /* This is the key fix */
+    background: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    font-family: var(--font-family);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;  /* Increased from 1rem */
+    left: 20px; /* Increased from 1rem */
+    z-index: 10; /* This is the key fix */
+    background: var(--primary-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.home-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* --- Game Styles --- */
+#game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.game-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skip-game-btn {
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Memory Game Specific */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 320px; /* Limit max width on larger screens */
+}
+
+.memory-card {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Perfect square */
+    background-color: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flip .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card .front-face,
+.memory-card .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.memory-card .back-face {
+    background: var(--accent-color);
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.memory-card .front-face {
+    background: var(--white);
+    transform: rotateY(180deg);
+}
+
+.memory-card .front-face img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}

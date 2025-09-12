@@ -1,0 +1,42 @@
+{
+  "id": "squeakys_acorn_pie",
+  "title": "Squeaky's Acorn Pie",
+  "category": "Educational",
+  "thumbnail": "assets/images/squeaky_thumb.png",
+  "pages": [
+    {
+      "type": "read",
+      "text": "In a cozy oak tree lived Squeaky, a squirrel famous for one thing: his Great Acorn Pie! One sunny morning, while gathering ingredients, he tripped. Oh no! Everything spilled.",
+      "image": "assets/images/squeaky_page1.png",
+      "audio": "assets/audio/squeaky_page1.mp3"
+    },
+    {
+      "type": "game",
+      "gameType": "sorting_game",
+      "gameScript": "js/games/sorting_game.js",
+      "description": "Help Squeaky sort his ingredients! Drag the food into the pie basket.",
+      "gameData": {
+        "items": [
+         
+          {"id": "pebble1", "src": "assets/images/games/pebble.png", "type": "bad"},
+          {"id": "berry1", "src": "assets/images/games/berry.png", "type": "good"},
+          {"id": "leaf1", "src": "assets/images/games/leaf.png", "type": "bad"},
+          {"id": "acorn2", "src": "assets/images/games/acron.png", "type": "good"},
+          {"id": "nut1", "src": "assets/images/games/nut.png", "type": "good"}
+        ]
+      }
+    },
+    {
+      "type": "read",
+      "text": "With your help, Squeaky gathered all the yummy ingredients. He mixed and baked until a wonderful smell filled the forest. His pie was perfect!",
+      "image": "assets/images/squeaky_page3.png",
+      "audio": "assets/audio/squeaky_page3.mp3"
+    },
+    {
+      "type": "read",
+      "text": "Squeaky shared his Great Acorn Pie with all of his friends. There was plenty for everyone, and it was the most delicious pie they had ever tasted. Hooray for Squeaky!",
+      "image": "assets/images/squeaky_page4.png",
+      "audio": "assets/audio/squeaky_page4.mp3"
+    }
+  ]
+}

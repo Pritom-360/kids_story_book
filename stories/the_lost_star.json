@@ -1,0 +1,30 @@
+{
+  "id": "the_lost_star",
+  "title": "The Lost Star",
+  "category": "Bedtime",
+  "thumbnail": "assets/images/lost_star_thumb.png",
+  "pages": [
+    {
+      "type": "read",
+      "text": "One night, a tiny star named Twinkle tumbled right out of the sky. She landed softly on a big, green leaf, her light flickering with fright.",
+      "image": "assets/images/story2_page1.png",
+      "audio": "assets/audio/story2_page1.mp3"
+    },
+    {
+      "type": "game",
+      "gameType": "matching_game",
+      "gameScript": "js/games/matching_game.js",
+      "description": "Help Twinkle find her friends! Match each constellation to its correct shape.",
+      "gameData": {
+        "items": ["bear", "dipper", "swan"],
+        "shapes": ["bear_shape", "dipper_shape", "swan_shape"]
+      }
+    },
+    {
+      "type": "read",
+      "text": "With all her friends found, they shone their light together, creating a beautiful ladder back to the sky. Twinkle waved goodbye and promised to shine extra bright.",
+      "image": "assets/images/story2_page3.png",
+      "audio": "assets/audio/story2_page3.mp3"
+    }
+  ]
+}
