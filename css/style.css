@@ -339,3 +339,25 @@ body {
     height: 80%;
     object-fit: contain;
 }
+
+
+/* --- CSS For Mobile-Friendly Games --- */
+
+/* Style for a selected item in the sorting game */
+.item-to-sort.selected {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px var(--accent-color);
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* A little "shake" animation for wrong answers */
+@keyframes shake-error {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.shake-error {
+    animation: shake-error 0.3s ease-in-out;
+}
